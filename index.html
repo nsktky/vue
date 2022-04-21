@@ -9,19 +9,27 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
     <div id="app">
-        <a :[attribute]="url">google</a>
-        <a v-bind="twitterObject">twitter</a>
+        <p>{{ number }}</p>
+        <button v-on:click="countUp()">カウントアップ</button>
+        <p v-on:mousemove="changeMousePossition">マウスを乗せてください</p>
+        <p>x:{{ x }} y{{ y }}</p>
     </div>
 
     <script>
     new Vue({
         el: '#app',
         data: {
-            url: 'https://google.com',
-            attribute: 'href',
-            twitterObject: {
-                href: 'https://twitter.com',
-                id: 21
+            number: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            countUp: function() {
+                this.number += 1;
+            },
+            changeMousePossition: function(event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
             }
         }
     })
