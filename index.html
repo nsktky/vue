@@ -9,24 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
     <div id="app">
-        <p v-once>{{ message }}</p>
-        <p>{{ sayHi() }}</p>
-        <p>{{ message }}</p>
-
+        <a :[attribute]="url">google</a>
+        <a v-bind="twitterObject">twitter</a>
     </div>
 
     <script>
     new Vue({
         el: '#app',
         data: {
-            message: 'HelloWorld!',
-            number: 3,
-            ok: true
-        },
-        methods: {
-            sayHi: function() {
-                this.message = 'Hello VueJS'
-                return 'Hi'
+            url: 'https://google.com',
+            attribute: 'href',
+            twitterObject: {
+                href: 'https://twitter.com',
+                id: 21
             }
         }
     })
