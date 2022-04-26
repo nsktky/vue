@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         <h1 :style="{color: textColor, 'background-color': bgColor}">Hello</h1>
-        <h1 :style="styleObject">World</h1>
+        <h1 :style="[styleObject, baseStyles]">World</h1>
     </div>
 
     <script>
@@ -22,8 +22,10 @@
                 styleObject: {
                     color: 'yellow',
                     'background-color': 'green'
+                },
+                baseStyles: {
+                    fontSize: '60px'
                 }
-
             }
         })
     </script>
