@@ -15,7 +15,7 @@
         <button @click="otherCounter += 1">other+1</button>
         <!-- computedプロパティで参照しているdataプロパティの値が変わると実行される -->
         <p>{{ lessThanThreeComputed }}</p>
-        <!-- 少しでも再描画されるとmethodが実行されてしまう -->
+        <!-- 少しでも再描画されるとmethodが実行されてしまう 使わないこと！！-->
         <p>{{ lessThanThreeMethod() }}</p>
 
     </div>
