@@ -10,6 +10,22 @@
     <div id="app">
         <ul>
             <li v-for="(frutu, index) in frutus">({{ index }}){{ frutu }}</li>
+            <hr>
+        </ul>
+
+        <ul>
+        <template v-for="frutu in frutus">
+            <li>{{ frutu }}</li>
+            <hr>
+        </template>
+        </ul>
+
+        <ul>
+            <li v-for="(value, key, index) in object">({{ index }}) {{ key }}:{{ value }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="n in 10">{{ n }}</li>
         </ul>
     </div>
 
@@ -17,7 +33,12 @@
         new Vue({
             el: '#app',
             data: {
-                frutus: ['りんご', 'みかん', 'もも']
+                frutus: ['りんご', 'みかん', 'もも'],
+                object: {
+                    firstName: '太郎',
+                    lastName: '田中',
+                    age: 21
+                }
             }
         })
     </script>
