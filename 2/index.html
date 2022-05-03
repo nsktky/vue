@@ -9,7 +9,8 @@
 <body>
     <div id="app">
     <p v-if="ok">OK</p>
-    <!-- v-elseはv-ifの真下にないと作動しない -->
+    <!-- v-else,v-else-ifはv-ifの真下にないと作動しない -->
+    <p v-else-if="maybeOk">Maybe OK</p>
     <p v-else>Not OK</p>
     </div>
 
@@ -17,7 +18,8 @@
         new Vue({
             el: '#app',
             data: {
-                ok: false
+                ok: false,
+                maybeOk: true
             }
         })
     </script>
