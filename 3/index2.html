@@ -9,6 +9,7 @@
 <body>
     <div id="app">
         <p>{{ message }}</p>
+        <p>{{ myData }}</p>
     </div>
 
     <script>
@@ -18,12 +19,16 @@
             }
 
         var vm = new Vue({
-            el: '#app',
-            data: data
+            // el: '#app',
+            data: data,
+            computed: {
+                myData: function() {
+                return this.$data;
+                }
+            }
         })
 
-        console.log(vm.$data === data);
-        console.log(vm);
+        vm.$mount('#app')
     </script>
 </body>
 </html>
