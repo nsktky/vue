@@ -15,6 +15,9 @@
     <div id="app2">
     </div>
 
+    <div id="app3">
+    </div>
+
     <script>
         var data = {
                 message: 'Hello',
@@ -31,12 +34,22 @@
             }
         })
         vm.$mount('#app')
+
         new Vue({
             data: {
                 name: 'メメ'
             },
             template: '<h1>こんにちは.{{name}}</h1>'
         }).$mount('#app2')
+
+        new Vue({
+            data: {
+                name: 'メメントモリ'
+            },
+            render: function(createElement) {
+                return createElement('h1', 'こんばんは.' + this.name);
+            }
+        }).$mount('#app3')
     </script>
 </body>
 </html>
