@@ -12,6 +12,9 @@
         <p>{{ myData }}</p>
     </div>
 
+    <div id="app2">
+    </div>
+
     <script>
         var data = {
                 message: 'Hello',
@@ -27,8 +30,13 @@
                 }
             }
         })
-
         vm.$mount('#app')
+        new Vue({
+            data: {
+                name: 'メメ'
+            },
+            template: '<h1>こんにちは.{{name}}</h1>'
+        }).$mount('#app2')
     </script>
 </body>
 </html>
