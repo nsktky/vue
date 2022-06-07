@@ -10,6 +10,11 @@
     <div id="app">
         <p>{{ message }}</p>
         <p>{{ myData }}</p>
+        <hello></hello>
+        <hello></hello>
+        <hello></hello>
+        <hello></hello>
+
     </div>
 
     <div id="app2">
@@ -22,6 +27,9 @@
         <h1>こんにちは{{ name }}</h1>
         <button @click="name = 'sarubadole'">名前を変更</button>
         <button @click="destroy">インスタンスを破壊</button>
+
+        <hello></hello>
+
     </div>
 
     <script>
@@ -30,6 +38,11 @@
                 name: 'meme'
             }
 
+            // componentで使いまわせる
+        Vue.component('hello', {
+            template: '<h1>使いまわせるよ</h1>'
+        });
+        
         var vm = new Vue({
             // el: '#app',
             data: data,
