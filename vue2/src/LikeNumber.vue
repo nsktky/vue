@@ -1,5 +1,8 @@
 <template>
-<p>いいね({{ number }})</p>
+<!-- templateの中身は一つの要素でないといけない -->
+<div>
+    <p>いいね({{ number }})</p>
+</div>
 </template>
 
 <script>
