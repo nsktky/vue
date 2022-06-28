@@ -14,3 +14,10 @@ export default{
     }
 };
 </script>
+
+<!-- このcomponent内の要素だけにCSS適用させるには,scopedをつける -->
+<style scoped>
+    div {
+        border: 2px solid red;
+    }
+</style>

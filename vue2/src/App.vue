@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LikeHeader from './LikeHeader.vue';
+import LikeHeader from './components/LikeHeader.vue';
 
 // componentのlocal設定
 export default {
@@ -15,3 +15,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+    div {
+        border: 2px solid blue;
+    }
+</style>
