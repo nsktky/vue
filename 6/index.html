@@ -12,12 +12,19 @@
         <my-component></my-component>
         <my-component></my-component>
         <my-component></my-component>
+        <hr>
+    </div>
+
+    <div id="app2">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
     </div>
 </body>
 
 <script>
-    Vue.component('my-component', {
-        // component内のdataプロパティは関数をとる
+    // componentをlocal登録するするため変数componentを作成
+    let component = {
         data: function(){
             return {
                 number: 12
@@ -29,10 +36,18 @@
                 this.number += 1;
             }
         }
+    }
+
+    new Vue({
+        el: '#app',
+        // componentをlocal登録する
+        components: {
+            'my-component': component
+        }
     })
 
     new Vue({
-        el: '#app'
+        el: '#app2'
     })
 </script>
 
