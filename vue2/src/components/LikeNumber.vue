@@ -2,6 +2,7 @@
 <!-- templateの中身は一つの要素でないといけない -->
 <div>
     <p>いいね({{ halfNumber }})</p>
+    <button @click="increment">+1</button>
 </div>
 </template>
 
@@ -10,6 +11,7 @@ export default{
     // 親componentからのデータを受け取るにはpropsを使用.propsは配列をとる.
     // propsはキャメルケースで表記
     // バリデーションするときはpropsをオブジェクトで指定.
+    // 複数のpropsをつけることもできる.
     props: {
         // 型でバリデーション.違う型のときは警告が出る
         totalNumber: {
@@ -22,8 +24,13 @@ export default{
     },
     computed: {
         halfNumber: function (){
-            // 親componentから渡されたプロパティはdataのようにあつかう.
+            // 親componentから渡されたプロパティはdataのようにアクセスできる
             return  this.totalNumber / 2
+        }
+    },
+    methods: {
+        increment: function() {
+            this.$emit('my-click', this.totalNumber + 1);
         }
     }
 };

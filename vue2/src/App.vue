@@ -4,8 +4,10 @@
   <h2>{{ number }}</h2>
   <!-- 子componentにデータを渡すには、propsで指定した値を属性のように表記.動的に扱いたい場合はv-bind. -->
   <!-- ケバブケースで書いた方がよい. -->
-  <LikeNumber></LikeNumber>
-  <LikeNumber :total-number='number'></LikeNumber>
+  <!-- 子componentから値を受け取るときはカスタムイベントを使用する.$eventでdataを受け取る. -->
+  <LikeNumber :total-number='number' @my-click="number = $event"></LikeNumber>
+  <!-- カスタムイベントは関数にしてもよい. -->
+  <LikeNumber :total-number='number' @my-click="increment"></LikeNumber>
 </div>
 </template>
 
@@ -21,6 +23,13 @@ export default {
   },
   components: {
     LikeHeader: LikeHeader
+  },
+  methods: {
+    // 子からdata受け取る関数.引数を設定し,dataとして取り扱う.
+    increment: function (value) {
+      this.number = value
+    }
+
   }
 }
 </script>
