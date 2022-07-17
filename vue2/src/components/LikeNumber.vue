@@ -28,8 +28,11 @@ export default{
             return  this.totalNumber / 2
         }
     },
+    // 子componentから親へのデータ受け渡し
     methods: {
         increment: function() {
+            // $emitで親のイベントを発火させる.カスタムイベントを作成.この際データを渡してあげる.
+            // カスタムイベント名はケバブケースで書く方がよい.
             this.$emit('my-click', this.totalNumber + 1);
         }
     }
